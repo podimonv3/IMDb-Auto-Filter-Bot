@@ -1,6 +1,7 @@
-FROM python:3.8-slim-buster
+# Debian-ന്റെ പുതിയതും സപ്പോർട്ട് ഉള്ളതുമായ bookworm പതിപ്പിലേക്ക് മാറ്റുന്നു 👈
+FROM python:3.8-slim-bookworm
 
-# കണ്ടെയ്നറിലെ ടൈം-സോൺ ഏഷ്യ/കൊൽക്കത്ത (IST) ആക്കി മാറ്റുന്നു 👈
+# കണ്ടെയ്നറിലെ ടൈം-സോൺ ഏഷ്യ/കൊൽക്കത്ത (IST) ആക്കി മാറ്റുന്നു
 RUN apt-get update && \
     apt-get install -y tzdata && \
     ln -snf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && \
